@@ -1,0 +1,7 @@
+<?php
+ 	session_unset();
+ 	session_destroy();
+// 	header("Location:http://localhost/final_project/emp_login.php");
+ 	header("Location:http://miniprojectofwebsite2.000webhostapp.com/index.php");
+	exit();
+?>

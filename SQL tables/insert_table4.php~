@@ -1,0 +1,28 @@
+<?php
+   $conn = new mysqli ("localhost", "Yogiraj", "123456", "Banking");
+   if($conn->connect_error)
+   	die("Connection failed :". $conn->connect_error);
+   	
+/*   $sql = "CREATE TABLE Employee
+   (	id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   	username VARCHAR(20) NOT NULL,
+   	password VARCHAR(20) NOT NULL,
+   	branch VARCHAR(25) NOT NULL
+   )";
+   
+   if($conn->query($sql) === TRUE)
+   	echo "Table created";
+   else
+   	echo "Failed : ". $conn->error;*/
+  
+   $sql = "INSERT INTO Employee(username, password, branch) VALUES('Username1', 'Password1!', 'branch1');";
+   $sql .= "INSERT INTO Employee(username, password, branch) VALUES('Username2', 'Password2@', 'branch2');";
+   $sql .= "INSERT INTO Employee(username, password, branch) VALUES('Username3', 'Password3#', 'branch3');";
+   
+   if($conn->query($sql) === TRUE)
+   	echo "New records inserted";
+   else
+   	echo "Error".$sql."<br/>".$conn->error;
+   
+   $conn->close();	
+?>
